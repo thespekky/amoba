@@ -8,3 +8,13 @@ D:\Github_BA_2_14SZFT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\obj\Debug\Amob
 D:\Github_BA_2_14SZFT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\obj\Debug\Amoba_Bodnar_Tesok.csproj.CoreCompileInputs.cache
 D:\Github_BA_2_14SZFT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\obj\Debug\Amoba_Bodnar_Tesok.exe
 D:\Github_BA_2_14SZFT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\obj\Debug\Amoba_Bodnar_Tesok.pdb
+D:\GIT_2_14_SZFT\BT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\bin\Debug\Amoba_Bodnar_Tesok.exe.config
+D:\GIT_2_14_SZFT\BT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\bin\Debug\Amoba_Bodnar_Tesok.exe
+D:\GIT_2_14_SZFT\BT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\bin\Debug\Amoba_Bodnar_Tesok.pdb
+D:\GIT_2_14_SZFT\BT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\obj\Debug\Amoba_Bodnar_Tesok.csprojAssemblyReference.cache
+D:\GIT_2_14_SZFT\BT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\obj\Debug\Amoba_Bodnar_Tesok.Form1.resources
+D:\GIT_2_14_SZFT\BT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\obj\Debug\Amoba_Bodnar_Tesok.Properties.Resources.resources
+D:\GIT_2_14_SZFT\BT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\obj\Debug\Amoba_Bodnar_Tesok.csproj.GenerateResource.cache
+D:\GIT_2_14_SZFT\BT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\obj\Debug\Amoba_Bodnar_Tesok.csproj.CoreCompileInputs.cache
+D:\GIT_2_14_SZFT\BT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\obj\Debug\Amoba_Bodnar_Tesok.exe
+D:\GIT_2_14_SZFT\BT\amoba\Amoba_Bodnar_Tesok\Amoba_Bodnar_Tesok\obj\Debug\Amoba_Bodnar_Tesok.pdb

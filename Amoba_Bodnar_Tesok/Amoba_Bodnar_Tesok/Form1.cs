@@ -51,7 +51,31 @@ namespace Amoba_Bodnar_Tesok
 
         private void Start_Click(object sender, EventArgs e)
         {
-            jatektergeneralas();
+            ellenorzes();
+            
+        }
+
+        private void ellenorzes()
+        {
+            string nev1 =Name1.Text;
+            string nev2 = Name2.Text;
+            if (nev1=="" || nev2=="")
+            {
+                MessageBox.Show("Add meg mind kettő játékos nevét.");
+            }
+            else
+            {
+                if (nev1==nev2)
+                {
+                    MessageBox.Show("Adj meg különböző neveket");
+                }
+                else
+                {
+                    jatektergeneralas();
+                }
+                
+            }
+
         }
     }
 }
