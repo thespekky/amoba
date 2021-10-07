@@ -152,9 +152,35 @@ namespace Amoba_Bodnar_Tesok
             {
                 for (int j = 0; j < 10; j++)
                 {
+                    if(i+1<10&&i+2<10&&i+3<10&&i + 4 < 10&&j + 1 < 10 && j + 2 < 10 && j + 3 < 10 && j + 4 < 10)
+                    { 
+                        if(helyek[i,j]==1&& helyek[i+1, j+1] == 1 && helyek[i+2, j+2] == 1 && helyek[i+3, j+3] == 1 && helyek[i+4, j+4] == 1)
+                        {
+                            nyert(hanyadik % 2);
+                        }      
+                    }
+                    if (i - 1 > 0 && i - 2 >0 && i - 3 > 0 && i - 4 >0 && j - 1 >0 && j - 2 >0 && j - 3 >0 && j - 4 >0)
+                    { 
+                        if (helyek[i, j] == 1 && helyek[i - 1, j - 1] == 1 && helyek[i - 2, j - 2] == 1 && helyek[i - 3, j - 3] == 1 && helyek[i - 4, j - 4] == 1)
+                        {
+                            nyert(hanyadik % 2);
+                        }
+                    }
 
-                    
-
+                    if (i + 1 < 10 && i + 2 < 10 && i + 3 < 10 && i + 4 < 10 && j + 1 < 10 && j + 2 < 10 && j + 3 < 10 && j + 4 < 10)
+                    { 
+                        if (helyek[i, j] == 2 && helyek[i + 1, j + 1] == 2 && helyek[i + 2, j + 2] == 2 && helyek[i + 3, j + 3] == 2 && helyek[i + 4, j + 4] == 2)
+                        {
+                            nyert(hanyadik % 2);
+                        }
+                    }
+                    if (i - 1 > 0 && i - 2 > 0 && i - 3 > 0 && i - 4 > 0 && j - 1 > 0 && j - 2 > 0 && j - 3 > 0 && j - 4 > 0)
+                    { 
+                        if (helyek[i, j] == 2 && helyek[i - 1, j - 1] == 2 && helyek[i - 2, j - 2] == 2 && helyek[i - 3, j - 3] == 2 && helyek[i - 4, j - 4] == 2)
+                        {
+                            nyert(hanyadik % 2);
+                        }
+                    }   
                 }
                 O = 0;
                 X = 0;
