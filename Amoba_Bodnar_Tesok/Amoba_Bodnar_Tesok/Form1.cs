@@ -12,7 +12,10 @@ namespace Amoba_Bodnar_Tesok
 {
     public partial class Form1 : Form
     {
+        static string nev1;
+        static string nev2;
         static Button[,] gombtomb = new Button[10,10];
+        string kezdo;
         public Form1()
         {
             InitializeComponent();
@@ -26,6 +29,16 @@ namespace Amoba_Bodnar_Tesok
 
         private void jatektergeneralas()
         {
+            Random vsz = new Random();
+            int kezdoszam = vsz.Next(0, 2);
+            if(kezdoszam==0)
+            {
+                kezdo = nev1;
+            }
+            else
+            {
+                kezdo = nev2;
+            }
             int seged = 0;
             for (int i = 0; i <10; i++)
             {
@@ -35,30 +48,37 @@ namespace Amoba_Bodnar_Tesok
                     Button button = new Button();
                     button.Location = new System.Drawing.Point((40 + (i * 75) + 20), (370 - (j * 30)));
                     button.Name = "gomb"+seged;
-                    button.Text = "";
+                    button.Text = seged.ToString();
                     button.Visible = true;
                     button.Size = new System.Drawing.Size(75, 31);
                     button.BackColor = Color.LightBlue;
-                    button.TextAlign = ContentAlignment.MiddleCenter;
+                    button.TextAlign = ContentAlignment.MiddleCenter;              
+                    button.Tag = "0";
                     Controls.Add(button);
                     button.BringToFront();
-                    button.Tag = "0";
                     gombtomb[i, j] = button;
+                    button.Click += new System.EventHandler(this.klikk);
                 }
             }
             
         }
-
+        private void klikk(object sender, EventArgs e)
+        {
+            Button klikkelt = sender as Button;
+            MessageBox.Show($"{klikkelt.Text}");
+        }
         private void Start_Click(object sender, EventArgs e)
         {
             ellenorzes();
-            
+
         }
+
+     
 
         private void ellenorzes()
         {
-            string nev1 =Name1.Text;
-            string nev2 = Name2.Text;
+            nev1 =Name1.Text;
+            nev2 = Name2.Text;
             if (nev1=="" || nev2=="")
             {
                 MessageBox.Show("Add meg mind kettő játékos nevét.");
