@@ -16,6 +16,8 @@ namespace Amoba_Bodnar_Tesok
         static string nev2;
         static Button[,] gombtomb = new Button[10,10];
         string kezdo;
+        static int hanyadik = 0;
+        static int[,] helyek = new int[10, 10];
         public Form1()
         {
             InitializeComponent();
@@ -47,8 +49,8 @@ namespace Amoba_Bodnar_Tesok
                     seged++;
                     Button button = new Button();
                     button.Location = new System.Drawing.Point((40 + (i * 75) + 20), (370 - (j * 30)));
-                    button.Name = "gomb"+seged;
-                    button.Text = seged.ToString();
+                    button.Name = i + " " + j;
+                    button.Text = "";
                     button.Visible = true;
                     button.Size = new System.Drawing.Size(75, 31);
                     button.BackColor = Color.LightBlue;
@@ -58,15 +60,113 @@ namespace Amoba_Bodnar_Tesok
                     button.BringToFront();
                     gombtomb[i, j] = button;
                     button.Click += new System.EventHandler(this.klikk);
+                    helyek[i, j] = 0;
                 }
             }
+            MessageBox.Show("A kezdő játkos (aki az X): "+kezdo);
             
         }
         private void klikk(object sender, EventArgs e)
         {
             Button klikkelt = sender as Button;
-            MessageBox.Show($"{klikkelt.Text}");
+            int i =Convert.ToInt32(klikkelt.Name.Split(' ')[0]);
+            int j =Convert.ToInt32(klikkelt.Name.Split(' ')[1]);
+
+            if (hanyadik%2==0)
+            {
+                klikkelt.Text = "X";
+                klikkelt.Enabled = false;
+                helyek[i, j] = 1;
+                hanyadik++;
+            }
+            else
+            {
+                klikkelt.Text = "O";
+                klikkelt.Enabled = false;
+                helyek[i, j] = 2;
+                hanyadik++;
+            }
+            kinyert();
+
         }
+
+        private void kinyert()
+        {
+            int X = 0;
+            int O = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    
+                    if (helyek[i,j]==1)
+                    {
+                        X++;
+                        O = 0;
+                    }
+                    if (helyek[i, j] == 2)
+                    {
+                        O++;
+                        X = 0;
+                    }
+                    if (O==5 || X==5)
+                    {
+                        nyert(hanyadik % 2);
+                    }
+
+                }
+                O = 0;
+                X = 0;
+                
+            }
+            O = 0;
+            X = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+
+                    if (helyek[j, i] == 1)
+                    {
+                        X++;
+                        O = 0;
+                    }
+                    if (helyek[j, i] == 2)
+                    {
+                        O++;
+                        X = 0;
+                    }
+                    if (O == 5 || X == 5)
+                    {
+                        nyert(hanyadik%2);
+                    }
+
+                }
+                O = 0;
+                X = 0;
+
+            }
+            O = 0;
+            X = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+
+                    
+
+                }
+                O = 0;
+                X = 0;
+
+            }
+        }
+
+        private void nyert(int v)
+        {
+            throw new NotImplementedException();
+        }
+
         private void Start_Click(object sender, EventArgs e)
         {
             ellenorzes();
