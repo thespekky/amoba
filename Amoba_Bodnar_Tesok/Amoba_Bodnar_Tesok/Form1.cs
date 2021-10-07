@@ -21,7 +21,7 @@ namespace Amoba_Bodnar_Tesok
         private void Form1_Load(object sender, EventArgs e)
         {
             //40; 340   40; 370     114; 370    méret:75; 31
-            jatektergeneralas();
+           
         }
 
         private void jatektergeneralas()
@@ -33,8 +33,8 @@ namespace Amoba_Bodnar_Tesok
                 {
                     seged++;
                     Button button = new Button();
-                    button.Location = new System.Drawing.Point((40 + (j * 75) + 20), (370 - (j * 30)));
-                    button.Name = "label"+seged;
+                    button.Location = new System.Drawing.Point((40 + (i * 75) + 20), (370 - (j * 30)));
+                    button.Name = "gomb"+seged;
                     button.Text = "";
                     button.Visible = true;
                     button.Size = new System.Drawing.Size(75, 31);
@@ -47,6 +47,11 @@ namespace Amoba_Bodnar_Tesok
                 }
             }
             
+        }
+
+        private void Start_Click(object sender, EventArgs e)
+        {
+            jatektergeneralas();
         }
     }
 }

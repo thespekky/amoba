@@ -34,9 +34,6 @@ namespace Amoba_Bodnar_Tesok
             this.Name1 = new System.Windows.Forms.TextBox();
             this.Name2 = new System.Windows.Forms.TextBox();
             this.Start = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -79,42 +76,13 @@ namespace Amoba_Bodnar_Tesok
             this.Start.TabIndex = 4;
             this.Start.Text = "Start";
             this.Start.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(40, 370);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 31);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "O";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(40, 340);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 31);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "X";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(114, 370);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 31);
-            this.button16.TabIndex = 15;
-            this.button16.Text = "O";
-            this.button16.UseVisualStyleBackColor = true;
+            this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 450);
-            this.Controls.Add(this.button16);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.Name2);
             this.Controls.Add(this.Name1);
@@ -135,9 +103,6 @@ namespace Amoba_Bodnar_Tesok
         private System.Windows.Forms.TextBox Name1;
         private System.Windows.Forms.TextBox Name2;
         private System.Windows.Forms.Button Start;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button16;
     }
 }
 
