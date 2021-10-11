@@ -18,6 +18,7 @@ namespace Amoba_Bodnar_Tesok
         string kezdo;
         static int hanyadik = 0;
         static int[,] helyek = new int[10, 10];
+        static string name = "";
         public Form1()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace Amoba_Bodnar_Tesok
         private void Form1_Load(object sender, EventArgs e)
         {
             //40; 340   40; 370     114; 370    méret:75; 31
+            
            
         }
 
@@ -48,11 +50,11 @@ namespace Amoba_Bodnar_Tesok
                 {
                     seged++;
                     Button button = new Button();
-                    button.Location = new System.Drawing.Point((40 + (i * 75) + 20), (370 - (j * 30)));
+                    button.Location = new System.Drawing.Point((450 + (i * 40) + 20), (400 - (j * 40)));
                     button.Name = i + " " + j;
                     button.Text = "";
                     button.Visible = true;
-                    button.Size = new System.Drawing.Size(75, 31);
+                    button.Size = new System.Drawing.Size(40, 40);
                     button.BackColor = Color.LightBlue;
                     button.TextAlign = ContentAlignment.MiddleCenter;              
                     button.Tag = "0";
@@ -68,6 +70,18 @@ namespace Amoba_Bodnar_Tesok
         }
         private void klikk(object sender, EventArgs e)
         {
+
+            if (name== "X")
+            {
+                
+                pictureBox1.ImageLocation = "O.png";
+                name= "O";
+            }
+            if(name == "O")
+            {
+                pictureBox1.ImageLocation = "X.png";
+                name = "X";
+            }
             Button klikkelt = sender as Button;
             int i =Convert.ToInt32(klikkelt.Name.Split(' ')[0]);
             int j =Convert.ToInt32(klikkelt.Name.Split(' ')[1]);
@@ -86,6 +100,8 @@ namespace Amoba_Bodnar_Tesok
                 helyek[i, j] = 2;
                 hanyadik++;
             }
+            label1.Focus();
+
             kinyert();
 
         }
@@ -157,10 +173,12 @@ namespace Amoba_Bodnar_Tesok
                         if(helyek[i,j]==1&& helyek[i+1, j+1] == 1 && helyek[i+2, j+2] == 1 && helyek[i+3, j+3] == 1 && helyek[i+4, j+4] == 1)
                         {
                             nyert(hanyadik % 2);
+                            
                         }
                         if (helyek[i, j] == 2 && helyek[i + 1, j + 1] == 2 && helyek[i + 2, j + 2] == 2 && helyek[i + 3, j + 3] == 2 && helyek[i + 4, j + 4] == 2)
                         {
                             nyert(hanyadik % 2);
+                           
                         }
                     }
                     if (i<=5&&j>=4)
@@ -168,10 +186,12 @@ namespace Amoba_Bodnar_Tesok
                         if(helyek[i,j]==1&&helyek[i+1,j-1]==1&& helyek[i + 2, j - 2] == 1 && helyek[i + 3, j - 3] == 1 && helyek[i + 4, j - 4] == 1)
                         {
                             nyert(hanyadik % 2);
+                            
                         }
                         if (helyek[i, j] == 2 && helyek[i + 1, j - 1] == 2 && helyek[i + 2, j - 2] == 2 && helyek[i + 3, j - 3] == 2 && helyek[i + 4, j - 4] == 2)
                         {
                             nyert(hanyadik % 2);
+                            
                         }
                     }   
                 }
@@ -181,13 +201,39 @@ namespace Amoba_Bodnar_Tesok
             }
         }
 
-        private void nyert(int v)
+        private void nyert(int nyertes)
         {
-            throw new NotImplementedException();
+            //valamiért többször fut le 2 ször, de van hogy 3 szor
+            if (nyertes==1)
+            {
+                MessageBox.Show("A Nyertesünk: "+kezdo);
+            }
+            else
+            {
+                if (nyertes == 0)
+                {
+                    if (kezdo == nev1)
+                    {
+                        MessageBox.Show("A Nyertesünk:  else1  " + nev2);
+                    }
+                    if (kezdo == nev2)
+                    {
+                        MessageBox.Show("A Nyertesünk: else2  " + nev1);
+                    }
+
+                }
+
+            }
+            
         }
 
         private void Start_Click(object sender, EventArgs e)
         {
+            label1.Focus();
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.Anchor = AnchorStyles.None;
+            name = "X";
+            pictureBox1.ImageLocation = "X.png";
             ellenorzes();
 
         }
