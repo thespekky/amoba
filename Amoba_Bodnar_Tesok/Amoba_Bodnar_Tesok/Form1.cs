@@ -71,16 +71,13 @@ namespace Amoba_Bodnar_Tesok
         private void klikk(object sender, EventArgs e)
         {
 
-            if (name== "X")
+            if (label3.Text=="X")
             {
-                
-                pictureBox1.ImageLocation = "O.png";
-                name= "O";
+                label3.Text = "O";
             }
-            if(name == "O")
+            else
             {
-                pictureBox1.ImageLocation = "X.png";
-                name = "X";
+                label3.Text = "X";
             }
             Button klikkelt = sender as Button;
             int i =Convert.ToInt32(klikkelt.Name.Split(' ')[0]);
@@ -230,10 +227,7 @@ namespace Amoba_Bodnar_Tesok
         private void Start_Click(object sender, EventArgs e)
         {
             label1.Focus();
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox1.Anchor = AnchorStyles.None;
-            name = "X";
-            pictureBox1.ImageLocation = "X.png";
+            
             ellenorzes();
 
         }
