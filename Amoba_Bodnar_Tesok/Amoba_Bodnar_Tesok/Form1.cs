@@ -18,7 +18,7 @@ namespace Amoba_Bodnar_Tesok
         string kezdo;
         static int hanyadik = 0;
         static int[,] helyek = new int[10, 10];
-        static string name = "";
+        static int hanyszor = 0;
         public Form1()
         {
             InitializeComponent();
@@ -33,15 +33,19 @@ namespace Amoba_Bodnar_Tesok
 
         private void jatektergeneralas()
         {
+            label3.Visible = true;
+            label4.Visible = true;
             Random vsz = new Random();
             int kezdoszam = vsz.Next(0, 2);
             if(kezdoszam==0)
             {
                 kezdo = nev1;
+                label5.Text = nev1;
             }
             else
             {
                 kezdo = nev2;
+                label5.Text = nev2;
             }
             int seged = 0;
             for (int i = 0; i <10; i++)
@@ -62,23 +66,66 @@ namespace Amoba_Bodnar_Tesok
                     button.BringToFront();
                     gombtomb[i, j] = button;
                     button.Click += new System.EventHandler(this.klikk);
+                    button.MouseHover += new System.EventHandler(this.rajta);
+                    button.MouseLeave+= new System.EventHandler(this.eltunes);
                     helyek[i, j] = 0;
                 }
             }
-            MessageBox.Show("A kezdő játkos (aki az X): "+kezdo);
+            
             
         }
+
+        private void eltunes(object sender, EventArgs e)
+        {
+            Button melyik = sender as Button;
+            if (melyik.Enabled!=false)
+            {
+                if (melyik.Text != "")
+                {
+                    melyik.Text = "";
+                }
+            }
+           
+        }
+
+        private void rajta(object sender, EventArgs e)
+        {
+            Button melyik = sender as Button;
+            if (melyik.Text=="")
+            {
+                if (label3.Text == "X")
+                {
+                    melyik.Text = "X";
+                }
+                else
+                {
+                    melyik.Text = "O";
+                }
+            }
+            
+        }
+
         private void klikk(object sender, EventArgs e)
         {
 
             if (label3.Text=="X")
             {
                 label3.Text = "O";
+                
             }
             else
             {
                 label3.Text = "X";
             }
+            if (label5.Text==nev1)
+            {
+                label5.Text = nev2;
+            }
+            else
+            {
+                label5.Text = nev1;
+            }
+
             Button klikkelt = sender as Button;
             int i =Convert.ToInt32(klikkelt.Name.Split(' ')[0]);
             int j =Convert.ToInt32(klikkelt.Name.Split(' ')[1]);
@@ -201,27 +248,42 @@ namespace Amoba_Bodnar_Tesok
         private void nyert(int nyertes)
         {
             //valamiért többször fut le 2 ször, de van hogy 3 szor
-            if (nyertes==1)
+            if (hanyszor>0)
             {
-                MessageBox.Show("A Nyertesünk: "+kezdo);
+                
             }
             else
             {
-                if (nyertes == 0)
+                if (nyertes == 1)
                 {
-                    if (kezdo == nev1)
+                    label3.Font= new Font("Microsoft Sans Serif", 20);
+                    label3.Text = "A Nyertesünk: " + kezdo;
+                    
+                }
+                else
+                {
+                    if (nyertes == 0)
                     {
-                        MessageBox.Show("A Nyertesünk:  else1  " + nev2);
-                    }
-                    if (kezdo == nev2)
-                    {
-                        MessageBox.Show("A Nyertesünk: else2  " + nev1);
+                        if (kezdo == nev1)
+                        {
+                            label3.Font = new Font("Microsoft Sans Serif", 20);
+
+                            label3.Text = "A Nyertesünk:  else1  " + nev2;
+                        }
+                        if (kezdo == nev2)
+                        {
+                            label3.Font = new Font("Microsoft Sans Serif", 20);
+                            label3.Text = "A Nyertesünk: else2  " + nev1;
+                        }
+
                     }
 
                 }
-
             }
             
+            hanyszor++;
+            label4.Visible = false;
+            label5.Visible = false;
         }
 
         private void Start_Click(object sender, EventArgs e)

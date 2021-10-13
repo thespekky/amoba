@@ -35,6 +35,7 @@ namespace Amoba_Bodnar_Tesok
             this.Name2 = new System.Windows.Forms.TextBox();
             this.Start = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -88,11 +89,21 @@ namespace Amoba_Bodnar_Tesok
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 140.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(35, 144);
+            this.label3.Location = new System.Drawing.Point(12, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(214, 211);
             this.label3.TabIndex = 5;
             this.label3.Text = "X";
+            this.label3.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(42, 346);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 31);
+            this.label5.TabIndex = 7;
             // 
             // Form1
             // 
@@ -100,6 +111,7 @@ namespace Amoba_Bodnar_Tesok
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(912, 450);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.Name2);
@@ -122,6 +134,7 @@ namespace Amoba_Bodnar_Tesok
         private System.Windows.Forms.TextBox Name2;
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }
 
